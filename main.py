@@ -1,9 +1,26 @@
-
 users: list = [
     {"name": "Kasia", "location": "Warszawa", "posts": 3},
     {"name": "Basia", "location": "Kraków", "posts": 5},
     {"name": "Asia", "location": "Wrocław", "posts": 7},
 ]
 
-for user in users:
-    print(f"Twój znajomy {user["name"]} z miejscowości {user["location"]} opublikował {user["posts"]} postów ")
+
+def user_info(users_data: list) -> None:
+    for user in users_data:
+        print(f"Twój znajomy {user["name"]} z miejscowości {user["location"]} opublikował {user["posts"]} postów ")
+
+
+while True:
+    tmp_choice: int = int(input("Wybierz opcję menu"))
+    if tmp_choice == 0:
+        break
+    if tmp_choice == 1:
+        print("wybrano funkcje wyświetlania aktywności znajomych")
+        for user in users:
+            user_info(users)
+    if tmp_choice == 2:
+        print("wybrano funkcje dodawania znajomego")
+    if tmp_choice == 3:
+        print("wybrano funkcje usuwania znajomych")
+    if tmp_choice == 4:
+        print("wybrano funkcje aktualizowania znajomych")
