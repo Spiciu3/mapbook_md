@@ -16,6 +16,11 @@ def add_user(users_data) -> None:
     posts: int = int(input("Podaj liczbę postów: "))
     users_data.append({"name": name, "location": location, "posts": posts})
 
+def remove_user(users_data)->None:
+    tmp_name:str=input("Podaj imię użytkownika do usunięcia ze znajomych: ")
+    for user in users_data:
+        if user["name"] == tmp_name:
+            users.remove(user)
 
 while True:
     tmp_choice: int = int(input("Wybierz opcję menu"))
@@ -29,5 +34,6 @@ while True:
         add_user(users)
     if tmp_choice == 3:
         print("wybrano funkcje usuwania znajomych")
+        remove_user(users)
     if tmp_choice == 4:
         print("wybrano funkcje aktualizowania znajomych")
